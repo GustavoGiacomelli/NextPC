@@ -9,3 +9,89 @@ body {
 p{
     color: white;
 }
+
+
+
+
+
+
+
+
+
+
+/* Estilos do footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.footer span {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.footer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .formas-pagamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.formas-pagamento img {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer .duvidas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer .duvidas-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+
+.footer .redes-sociais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
