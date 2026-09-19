@@ -12,10 +12,97 @@ header img {
     width: 200px;
 }
 
+header .menu-superior {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: #2c2c2c;
+}
+
+header .menu-superior .barra-pesquisa {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+}
+
+header .menu-superior input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    height: 42px;
+    padding: 10px 44px 10px 12px;
+
+    border: 1px solid #4d4c4c;
+    border-radius: 6px;
+    background-color: #4d4c4c;
+    color: white;
+}
+
+header .menu-superior .barra-pesquisa .lupa {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+header .menu-superior {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 500px) 1fr;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    margin: 0;
+    background-color: #2c2c2c;
+}
+
+header .menu-superior nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: right;
+    justify-self: end;
+}
+
+header .menu-superior nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+    border: 1px solid #555555;
+    border-radius: 6px;
+
+    background-color: #3a3a3a;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+header .menu-superior nav a:hover {
+    background-color: #505050;
+    border-color: #777777;
+}
+
+header .menu-superior nav a:first-child {
+    background-color: #e60023;
+    border-color: #e60023;
+}
+
+
 /* Estilos do main */
 main {
     width: 100%;
-    padding: 24px 16px;
+    padding: 10px 10px;
     background-color: #191919;
 }
 
@@ -138,12 +225,6 @@ main .card span {
 main .dividido {
     color: #000000;
     font-size: 0.8rem;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    main .cards {
-        scroll-behavior: auto;
-    }
 }
 
 /* Estilos do footer */
