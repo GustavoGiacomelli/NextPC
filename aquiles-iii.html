@@ -11,21 +11,28 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="Logo NextPC">
 
-        <p>A evolução do seu setup</p>
+        <div class="menu-superior">
 
-        <input type="text" placeholder="O que você procura?">
+            <a class="logo" href="index.html">
+                <img src="imagens/logo.png" alt="NextPC">
+            </a>
 
-        <nav>
-            <a href="NextPC.html">Início</a>
-            <a href="pc-gamer.html">PC Gamer</a>
-            <a href="#">Promoção</a>
-            <a href="#">Monte seu PC</a>
-            <a href="#">Peças</a>
-            <a href="#">Gadgets</a>
-            <a href="#">Empresas</a>
-        </nav>
+            <div class="barra-pesquisa">
+                <input type="search" placeholder="O que você procura?">
+                <img class="lupa" src="imagens/lupa.png">
+            </div>
+
+            <nav>
+                <a href="#produtos">Promoção</a>
+                <a href="categorias.html">Categorias</a>
+                <a class="icone-conta" href="#"><img src="imagens/conta.png" alt="Conta"></a>
+                <a class="icone-carrinho" href="#"><img src="imagens/carrinho.png" alt="Carrinho"></a>
+            </nav>
+
+
+        </div>
+
     </header>
 
     <main>
@@ -33,7 +40,7 @@
         <section class="produto-detalhe">
 
             <div class="imagem-produto">
-                <img src="aquiles III.jpg" alt="PC Gamer Pichau Aquiles III">
+                <img src="imagens/aquiles III.jpg" alt="PC Gamer Pichau Aquiles III">
             </div>
 
             <div class="informacoes-produto">
@@ -61,7 +68,7 @@
                 </div>
 
                 <button class="botao-compra">
-                    Disponível para compra
+                    Adicionar ao Carrinho
                 </button>
 
             </div>
@@ -72,42 +79,19 @@
 
     <footer class="footer">
 
-        <section class="formas-pagamento">
-            <span>Formas de Pagamento</span><br>
-            <img src="formas_de_pagamento.png" alt="Formas de Pagamento">
+        <section id="sobre">
+            <h2>Sobre a NextPC</h2>
+            <p>130 Avis Track, Apt. 739, Port Abrahamtown, Geórgia, Estados Unidos</p>
         </section>
 
-        <section class="duvidas">
-            <span>Dúvidas?</span><br>
-
-            <div class="duvidas-links">
-                <a href="#">Perguntas Frequentes</a><br>
-                <a href="#">Fale Conosco</a><br>
-                <a href="#">Política de Privacidade</a><br>
-                <a href="#">Política de Trocas e Devoluções</a><br>
-            </div>
+        <section>
+            <h2>Formas de pagamento</h2>
+            <img class="pagamentos" src="imagens/formas_de_pagamento.png" alt="Formas de pagamento">
         </section>
 
-        <section class="redes-sociais">
-            <span>Redes Sociais</span><br>
-
-            <div class="social-icons">
-                <a href="#">
-                    <img src="facebook-brands-solid-full.svg" alt="Facebook" height="40" width="40">
-                </a>
-
-                <a href="#">
-                    <img src="instagram-brands-solid-full.svg" alt="Instagram" height="40" width="40">
-                </a>
-
-                <a href="#">
-                    <img src="x-twitter-brands-solid-full.svg" alt="Twitter" height="40" width="40">
-                </a>
-
-                <a href="#">
-                    <img src="youtube-brands-solid-full.svg" alt="YouTube" height="40" width="40">
-                </a>
-            </div>
+        <section>
+            <h2>Dúvidas?</h2>
+            <a href="#contato">Entre em contato</a>
         </section>
 
     </footer>

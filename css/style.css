@@ -1,4 +1,5 @@
-/* Geral */
+/* gloval */
+
 * {
     box-sizing: border-box;
 }
@@ -7,13 +8,14 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #1a1a1a;
-    color: white;
+    color: #fff;
+    line-height: 1.5;
 }
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
-    display: block;
 }
 
 a {
@@ -21,33 +23,79 @@ a {
     text-decoration: none;
 }
 
-/* Cabeçalho */
-.menu-superior {
-    display: grid;
-    grid-template-columns: 1fr 500px 1fr;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+input,
+button {
+    font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #3388ff;
+    outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0;
+    font-size: 26px;
+    line-height: 1.25;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+/* CABEÇALHO - header */
+
+header {
     background-color: #2c2c2c;
 }
 
+.menu-superior {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr) minmax(0, 500px) minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    max-width: 1500px;
+    margin-inline: auto;
+    padding: 20px;
+}
+
 .logo {
+    display: block;
     width: 200px;
     max-width: 100%;
 }
 
+.logo img {
+    width: 100%;
+}
+
 .barra-pesquisa {
     position: relative;
+    width: 100%;
+    
 }
 
 .barra-pesquisa input {
     width: 100%;
+    min-width: 0;
     height: 44px;
     padding: 10px 44px 10px 12px;
     border: 1px solid #777;
     border-radius: 6px;
     background-color: #4d4c4c;
-    color: white;
+    color: #fff;
 }
 
 .barra-pesquisa input::placeholder {
@@ -56,100 +104,67 @@ a {
 
 .barra-pesquisa .lupa {
     position: absolute;
+    top: 50%;
     right: 12px;
-    top: 12px;
     width: 20px;
     height: 20px;
+    transform: translateY(-50%);
+    object-fit: contain;
     pointer-events: none;
 }
 
-nav {
+.menu-superior nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 10px;
 }
 
-nav a, .botao {
+.menu-superior nav a,
+.botao {
+    display: inline-block;
     padding: 10px 16px;
-    background-color: #c90020;
-    color: white;
     border-radius: 6px;
+    background-color: #c90020;
+    color: #fff;
     text-align: center;
+    transition: background-color 0.2s;
 }
 
-nav a:hover, .botao:hover {
+.menu-superior nav a:hover,
+.botao:hover {
     background-color: #a3001a;
 }
 
-/* Conteúdo */
+/* Main */
+
 main {
     display: grid;
-    gap: 20px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    width: 100%;
     max-width: 1500px;
-    margin: 0 auto;
-    padding: 20px;
+    margin-inline: auto;
+    padding: 24px;
 }
 
-h1 {
-    font-size: 26px;
-    margin: 0;
-}
-
-h2 {
-    font-size: 22px;
-    margin: 0 0 20px;
-}
-
-main section {
-    padding: 20px;
-    background-color: #4d4c4c;
+main > section {
+    min-width: 0;
+    padding: 24px;
     border-radius: 10px;
+    background-color: #4d4c4c;
 }
 
-.grade-categorias, .grade-produtos {
+
+/* Categorias da Pagina Inicial */
+
+.grade-categorias {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
 }
 
-.lista-processadores {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px; 
-}
-
-.lista-processadores .card {
-    flex: 0 0 260px;
-    max-width: 100%;
-}
-
-.lista-placas-mae {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px; 
-}
-
-.lista-placas-mae .card {
-    flex: 0 0 260px;
-    max-width: 100%;
-}
-
-.lista-placas-video {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px; 
-}
-
-.lista-placas-video .card {
-    flex: 0 0 260px;
-    max-width: 100%;
-}
-
-.categoria, .card {
+.categoria {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,15 +178,37 @@ main section {
     border-radius: 10px;
 }
 
+.categoria span {
+    font-weight: bold;
+}
+
 .categoria:hover {
     text-decoration: underline;
 }
 
+
+/* Produtos Pagina Inicial */
+
+.grade-produtos,
+.lista-processadores,
+.lista-placas-mae,
+.lista-placas-video {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
     padding: 20px;
-    background-color: white;
-    color: #191919;
     border-radius: 10px;
+    background-color: #fff;
+    color: #191919;
+    text-align: center;
 }
 
 .card img {
@@ -180,12 +217,15 @@ main section {
     object-fit: contain;
 }
 
-.card h3, .card p {
+.card h3,
+.card p {
     margin: 0;
 }
 
 .card h3 {
     font-size: 16px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
 }
 
 .preco {
@@ -195,6 +235,7 @@ main section {
 }
 
 .parcelamento {
+    color: #555;
     font-size: 14px;
 }
 
@@ -203,185 +244,186 @@ main section {
     margin-top: auto;
 }
 
-/* Rodapé */
-.footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 30px;
-    background-color: white;
-    color: #191919;
-    text-align: center;
-}
 
-.footer h2 {
-    color: #c90020;
-}
-
-.pagamentos {
-    width: 400px;
-    margin: 0 auto;
-}
+/* pc-gamer */
 
 .categoria-pc {
-    padding: 40px 8%;
+    padding: 20px;
+    background-color: transparent;
 }
 
 .categoria-pc h1 {
+    margin-bottom: 28px;
+    color: #fff;
     text-align: center;
-    margin-bottom: 40px;
 }
 
 .grid-produtos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .produto {
+    min-width: 0;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 20px;
-    background-color: white;
-    transition: 0.2s;
+    background-color: #fff;
+    color: #191919;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .produto:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
 }
 
 .produto a {
-    text-decoration: none;
-    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    border-radius: inherit;
 }
 
 .produto img {
     width: 100%;
-    height: 220px;
+    height: 180px;
     object-fit: contain;
 }
 
 .produto h2 {
+    margin: 16px 0 10px;
     font-size: 18px;
-    margin: 15px 0;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
 }
 
 .produto p {
+    margin: auto 0 0;
+    color: #16703c;
     font-size: 22px;
     font-weight: bold;
 }
 
-/* Responsividade */
+/* aquiles iii */
 
-@media (max-width: 900px) {
-    .grid-produtos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .grid-produtos {
-        grid-template-columns: 1fr;
-    }
-}
-
-.categoria-pc h1 {
-    color: white;
-}
-
-.produto p {
-    color: green;
-    font-size: 22px;
-    font-weight: bold;
-}
 .produto-detalhe {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    padding: 60px 8%;
-    background-color: #f5f5f5;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
+    gap: 30px;
+    padding: 30px;
+    background-color: #f5f5f5;
+    color: #191919;
 }
 
-.imagem-produto {
-    background-color: white;
+.imagem-produto,
+.informacoes-produto {
+    min-width: 0;
     padding: 30px;
     border-radius: 12px;
-    text-align: center;
+    background-color: #fff;
+    color: #191919;
 }
 
 .imagem-produto img {
     width: 100%;
     max-width: 550px;
-    height: 500px;
+    height: clamp(240px, 30vw, 420px);
+    margin-inline: auto;
     object-fit: contain;
 }
 
-.informacoes-produto {
-    background-color: white;
-    padding: 35px;
-    border-radius: 12px;
-}
-
 .informacoes-produto h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    font-size: 28px;
+    line-height: 1.3;
 }
 
 .descricao {
-    font-size: 17px;
-    line-height: 1.6;
+    margin-bottom: 20px;
     color: #555;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .informacoes-produto h2 {
-    margin-top: 25px;
+    margin: 24px 0 12px;
+    font-size: 22px;
 }
 
 .informacoes-produto ul {
+    margin: 0;
     padding-left: 20px;
-    line-height: 1.8;
+    line-height: 1.7;
+}
+
+.informacoes-produto li + li {
+    margin-top: 6px;
 }
 
 .preco-produto {
-    color: #00a650;
+    margin-top: 24px;
+    color: #16703c;
     font-size: 30px;
     font-weight: bold;
-    margin-top: 25px;
 }
 
 .botao-compra {
-    margin-top: 20px;
+    display: block;
     width: 100%;
-    padding: 15px;
+    margin-top: 16px;
+    padding: 14px 20px;
     border: none;
     border-radius: 8px;
-    background-color: #00a650;
-    color: white;
+    background-color: #00843d;
+    color: #fff;
     font-size: 18px;
     font-weight: bold;
+    text-align: center;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .botao-compra:hover {
-    background-color: #008f45;
+    background-color: #006d32;
 }
 
-/* Responsividade */
 
-@media (max-width: 800px) {
+/* =========================
+   RODAPÉ
+========================= */
 
-    .produto-detalhe {
-        grid-template-columns: 1fr;
-        padding: 30px 5%;
-    }
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    padding: 30px;
+    background-color: #fff;
+    color: #191919;
+    text-align: center;
+}
 
-    .imagem-produto img {
-        height: 350px;
-    }
+.footer section {
+    min-width: 0;
+}
 
-    .informacoes-produto h1 {
-        font-size: 26px;
-    }
+.footer h2 {
+    margin-bottom: 16px;
+    color: #c90020;
+}
 
+.footer p {
+    margin-bottom: 0;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.pagamentos {
+    width: 400px;
+    max-width: 100%;
+    margin-inline: auto;
 }
